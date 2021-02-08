@@ -12,16 +12,16 @@
    :description "A tool for diffing kubernetes manifests."
    :version     "0.0.1"
    :subcommands [{:command     "diff"
-                  :description "Diff kubernetes resources between two files (or sets of files)"
+                  :description "Diff kubernetes resources across files / directories."
                   :examples    ["kdiff diff --old old.yml --new new.yml"
-                                "kdiff diff --old old/manifests --new new/manifests"]
-                  :opts        [{:as       "The old (expected) manifests."
+                                "kdiff diff --old old/ --old also-old/file.yml --new new/ --new also-new/"]
+                  :opts        [{:as       "An old (expected) manifest file or directory."
                                  :option   "old"
                                  :short    "o"
                                  :type     :string
                                  :multiple true
                                  :default  :present}
-                                {:as       "The new (actual) manifests."
+                                {:as       "An new (actual) manifest file or directory."
                                  :option   "new"
                                  :short    "n"
                                  :type     :string
